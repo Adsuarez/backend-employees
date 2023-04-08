@@ -1,8 +1,9 @@
--- Disclaimer: the exam is incomplete, only work get_all_departnems.rest and get_all_employees.rest
+---
+__Disclaimer:__ the exam is incomplete, only work get_all_departnems.rest and get_all_employees.rest
 
-#DOCKER configuration for PostgreSQL:
+# DOCKER configuration for PostgreSQL:
 
-##commands for windows
+## commands for windows
 
     C:\Users\Usuario>docker pull postgres
 
@@ -14,7 +15,7 @@
 
     cobrando_db=#
 
-#Get sarted:
+# Get sarted:
     1. Open a terminal in backend-empleados folder
     2. Create a virtual environment with the next command: python -m venv virt
     3. Activate virtual environment with the next command: source virt/Scripts/activate
@@ -22,8 +23,8 @@
     5. Access folder crud with the next command: cd crud
     5. Run server on port 1234 with the next command: python manage.py runserver 1234
 
-#make CRUD with Rest Client
+# make CRUD with Rest Client
     Note: Rest Client is like a Postman, but is a plugging embedded for Visual Studio Code, and you can download here: https://marketplace.visualstudio.com/items?itemName=humao.rest-client 
 
-    ##How i can make CRUD?
+    ## How i can make CRUD?
     It's very simply, you can open "requests" folder in the project, and there are some files with ".rest" extension. open each one and click on the link "Send Request" that is above the first line. That's all, look the response of each request.
