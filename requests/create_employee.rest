@@ -1,0 +1,10 @@
+POST http://localhost:1234/api/empleado/  HTTP/1.1
+content-type: application/json
+
+{
+    "codigo": 2124,
+    "nif": 333,
+    "nombre": "miguel",
+    "apellido1": "pinto",
+    "apellido2": "gomez"
+}
