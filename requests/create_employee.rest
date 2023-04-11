@@ -2,10 +2,10 @@ POST http://localhost:1234/api/empleado/  HTTP/1.1
 content-type: application/json
 
 {
-    "codigo": 2138,
-    "nif": 380,
-    "nombre": "andres",
-    "apellido1": "xl",
+    "codigo": 2142,
+    "nif": 420,
+    "nombre": "rafa",
+    "apellido1": "el",
     "apellido2": "op",
     "codigo_departamento": 5126
 }

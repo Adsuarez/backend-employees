@@ -2,7 +2,7 @@ POST http://localhost:1234/api/departamento/  HTTP/1.1
 content-type: application/json
 
 {
-    "codigo": 5127,
-    "nombre": "gerencia",
-    "presupuesto": 5000000
+    "codigo": 5128,
+    "nombre": "contabilidad",
+    "presupuesto": 6000000
 }
