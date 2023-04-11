@@ -5,4 +5,5 @@ urlpatterns = [
     path('empleados/', views.getAllEmployees),
     path('departamentos/', views.getAllDepartments),
     path('empleado/', views.createEmployee),
+    path('departamento/', views.createDepartment),
 ]
