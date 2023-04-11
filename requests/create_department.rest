@@ -1,8 +1,8 @@
-POST http://localhost:1234/api/departamento/  HTTP/1.1
+POST http://localhost:1234/api/departamentos/crear  HTTP/1.1
 content-type: application/json
 
 {
-    "codigo": 5128,
-    "nombre": "contabilidad",
-    "presupuesto": 6000000
+    "codigo": 5129,
+    "nombre": "calidad",
+    "presupuesto": 7000000
 }

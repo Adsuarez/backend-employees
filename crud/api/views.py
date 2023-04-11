@@ -6,16 +6,30 @@ from api.serializers import EmpleadoSerializer, DepartamentoSerializer
 
 LENGTH_EMPLOYEE_MODEL = 4
 
-@api_view(['GET'])
-def getAllEmployees(request):
-    empleado = Empleado.objects.all()
-    serializers = EmpleadoSerializer(empleado, many=True)
-    return Response(serializers.data)
-
+@api_view(['POST'])
+def createDepartment(request):
+    data = request.data
+    try:
+        departamento = Departamento.objects.create(
+            codigo = data['codigo'],
+            nombre = data['nombre'],
+            presupuesto = data['presupuesto']
+        )
+        serializers = DepartamentoSerializer(departamento, many=False)
+        return Response(serializers.data, status=201)
+    except Exception as e:
+        raise Response(e.args, status=400)
+    
 @api_view(['GET'])
 def getAllDepartments(request):
     departamento = Departamento.objects.all()
     serializers = DepartamentoSerializer(departamento, many=True)
+    return Response(serializers.data)
+
+@api_view(['GET'])
+def getAllEmployees(request):
+    empleado = Empleado.objects.all()
+    serializers = EmpleadoSerializer(empleado, many=True)
     return Response(serializers.data)
 
 @api_view(['POST'])
@@ -67,16 +81,6 @@ def createEmployee(request):
     except Exception as e:
         return Response(e.args, status=401)
     
-@api_view(['POST'])
-def createDepartment(request):
-    data = request.data
-    try:
-        departamento = Departamento.objects.create(
-            codigo = data['codigo'],
-            nombre = data['nombre'],
-            presupuesto = data['presupuesto']
-        )
-        serializers = DepartamentoSerializer(departamento, many=False)
-        return Response(serializers.data, status=201)
-    except Exception as e:
-        raise Response(e.args, status=400)
+@api_view(['PUT'])
+def updateEmployee(request, code):
+    None
