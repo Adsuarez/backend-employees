@@ -76,11 +76,19 @@ def createEmployee(request):
         return Response(e.args, status=409)
     
     try:
-        serializers = EmpleadoSerializer(empleado, many=False)
+        serializers = EmpleadoSerializer(empleado, many = False)
         return Response(serializers.data, status=201)
     except Exception as e:
         return Response(e.args, status=401)
     
 @api_view(['PUT'])
 def updateEmployee(request, code):
-    None
+    data = request.data
+    empleado = Empleado.objects.get(codigo = code)
+    serializers = EmpleadoSerializer(instance = empleado, data = data)
+    if not serializers.is_valid():
+        return Response("bad or missing updating information", status=400)
+    serializers.save()
+    return Response(serializers.data, status=202)
+
+
