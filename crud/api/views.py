@@ -34,14 +34,17 @@ def createEmployee(request):
     if not 'apellido2' in dataList:
         data['apellido2'] = ""
     
-    #verify if department exist with code
-    check_result = list(Departamento.objects.all())
-    print("\n before: \n")
-    if (not data['codigo_departamento'] in check_result):
-        print(f"\n the array check_result is: {check_result[0]} \n")
-    print("^ after \n")
+    #verify if passed code of department already exists
+    departments = Departamento.objects.all()
+    departments_dirty_list = list(departments)
+    departments_list = []
+    
+    for department in departments_dirty_list:
+       departments_list.append(department.codigo)
 
-    if (not 'codigo_departamento' in dataList) | (not data['codigo_departamento'] in check_result):
+    if not 'codigo_departamento' in dataList:
+        instanced_codigo_departamento = None
+    elif not data['codigo_departamento'] in departments_list:
         instanced_codigo_departamento = None
     else:
         instanced_codigo_departamento = Departamento.objects.get(codigo = data['codigo_departamento'])      
@@ -56,14 +59,12 @@ def createEmployee(request):
             codigo_departamento = instanced_codigo_departamento
         )
     except Exception as e:
-        print(f"\n ----> FROM CREATE VALUE OF ERROR IS: {e.args} \n")
         return Response(e.args, status=409)
     
     try:
         serializers = EmpleadoSerializer(empleado, many=False)
         return Response(serializers.data, status=201)
     except Exception as e:
-        print(f"\n ----> FROM SERIALIZED VALUE OF ERROR IS: {e.args} \n")
         return Response(e.args, status=401)
     
 @api_view(['POST'])
@@ -77,5 +78,5 @@ def createDepartment(request):
         )
         serializers = DepartamentoSerializer(departamento, many=False)
         return Response(serializers.data, status=201)
-    except ValueError:
-        raise Response(ValueError)
+    except Exception as e:
+        raise Response(e.args, status=400)
