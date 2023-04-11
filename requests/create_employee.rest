@@ -1,4 +1,4 @@
-POST http://localhost:1234/api/empleados/crear  HTTP/1.1
+POST http://localhost:1234/api/empleados/crear/  HTTP/1.1
 content-type: application/json
 
 {
