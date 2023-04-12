@@ -1,4 +1,4 @@
-PUT http://localhost:1234/api/empleados/2143/  HTTP/1.1
+PUT http://localhost:1234/api/empleados/actualizar/2143/  HTTP/1.1
 content-type: application/json
 
 {
@@ -11,13 +11,13 @@ content-type: application/json
 }
 
 ###
-PUT http://localhost:1234/api/empleados/2143/  HTTP/1.1
+PUT http://localhost:1234/api/empleados/actualizar/2126/  HTTP/1.1
 content-type: application/json
 
 {
-    "codigo": 2143,
-    "nif": 430,
-    "nombre": "eraclito",
-    "apellido1": "calvo",
-    "codigo_departamento": 5150
+    "codigo": 2126,
+    "nif": 260,
+    "nombre": "oscar",
+    "apellido1": "de leon",
+    "codigo_departamento": 5128
 }

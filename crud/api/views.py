@@ -84,6 +84,10 @@ def createEmployee(request):
 @api_view(['PUT'])
 def updateEmployee(request, code):
     data = request.data
+    
+    if not is_code_valid(code):
+        return Response("user not found", status=404)
+    
     empleado = Empleado.objects.get(codigo = code)
     serializers = EmpleadoSerializer(instance = empleado, data = data)
     if not serializers.is_valid():
@@ -91,4 +95,25 @@ def updateEmployee(request, code):
     serializers.save()
     return Response(serializers.data, status=202)
 
+@api_view(['DELETE'])
+def deleteEmployee(request, code):
+    
+    if not is_code_valid(code):
+        return Response("user not found", status=404)
+    
+    empleado = Empleado.objects.get(codigo = code)
+    empleado.delete()
+    return Response("user deleted successfully", status=204)
 
+def is_code_valid(code):
+    employees = Empleado.objects.all()
+    employees_dirty_list = list(employees)
+    employees_list = []
+
+    for employee in employees_dirty_list:
+        employees_list.append(employee.codigo)
+
+    if not code in employees_list:
+        return False
+    
+    return True
