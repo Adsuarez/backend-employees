@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'crud.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'localhost',
+        'HOST': 'some-postgres',
         'PORT': 5432,
         'NAME': 'cobrando_db',
         'USER': 'admin',

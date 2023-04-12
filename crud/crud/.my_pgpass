@@ -1,1 +1,1 @@
-localhost:5432:cobrando_db:admin:password
+some-postgres:5432:cobrando_db:admin:password
