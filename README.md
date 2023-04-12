@@ -1,5 +1,5 @@
 ---
-__Disclaimer:__ the exam is incomplete, only work get_all_departnems.rest and get_all_employees.rest
+__Disclaimer:__ the project is almost complete, right now is work CRUD for employees. Is pending create a docker for server and integrate to take a microservice.
 
 # DOCKER configuration for PostgreSQL:
 
