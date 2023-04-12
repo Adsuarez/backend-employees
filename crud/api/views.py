@@ -29,7 +29,15 @@ def getAllDepartments(request):
 @api_view(['GET'])
 def getAllEmployees(request):
     empleado = Empleado.objects.all()
-    serializers = EmpleadoSerializer(empleado, many=True)
+    serializers = EmpleadoSerializer(empleado, many = True)
+    return Response(serializers.data)
+
+@api_view(['GET'])
+def getEmployee(request, code):
+    if not is_code_valid(code):
+        return Response("employee not found", status=404)
+    empleado = Empleado.objects.get(codigo = code)
+    serializers = EmpleadoSerializer(empleado, many = False)
     return Response(serializers.data)
 
 @api_view(['POST'])
@@ -86,7 +94,7 @@ def updateEmployee(request, code):
     data = request.data
     
     if not is_code_valid(code):
-        return Response("user not found", status=404)
+        return Response("employee not found", status=404)
     
     empleado = Empleado.objects.get(codigo = code)
     serializers = EmpleadoSerializer(instance = empleado, data = data)
@@ -99,11 +107,11 @@ def updateEmployee(request, code):
 def deleteEmployee(request, code):
     
     if not is_code_valid(code):
-        return Response("user not found", status=404)
+        return Response("employee not found", status=404)
     
     empleado = Empleado.objects.get(codigo = code)
     empleado.delete()
-    return Response("user deleted successfully", status=204)
+    return Response("employee deleted successfully", status=204)
 
 def is_code_valid(code):
     employees = Empleado.objects.all()
