@@ -6,5 +6,6 @@ urlpatterns = [
     path('departamentos/crear/', views.createDepartment),
     path('empleados/', views.getAllEmployees),
     path('empleados/crear/', views.createEmployee),
-    path('empleados/<int:code>/', views.updateEmployee),
+    path('empleados/actualizar/<int:code>/', views.updateEmployee),
+    path('empleados/eliminar/<int:code>/', views.deleteEmployee),
 ]
