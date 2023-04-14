@@ -1,3 +1,4 @@
+#For development
 PUT http://localhost:1234/api/empleados/actualizar/2143/  HTTP/1.1
 content-type: application/json
 
@@ -11,13 +12,15 @@ content-type: application/json
 }
 
 ###
-PUT http://localhost:1234/api/empleados/actualizar/2126/  HTTP/1.1
+#For production
+PUT https://employees-crud.onrender.com/api/empleados/actualizar/2110/  HTTP/1.1
 content-type: application/json
 
 {
-    "codigo": 2126,
-    "nif": 260,
-    "nombre": "oscar",
-    "apellido1": "de leon",
-    "codigo_departamento": 5128
+    "codigo": 2110,
+    "nif": 110,
+    "nombre": "me cambiaron",
+    "apellido1": "otro",
+    "apellido2": "prueba",
+    "codigo_departamento": 5110
 }
