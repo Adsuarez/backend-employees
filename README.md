@@ -1,7 +1,19 @@
 ---
 __Disclaimer:__ 
-- This project was created to practice CRUD service for employees of a company, this works in development environment.
+- This project was created to practice CRUD service for employees of a company, this works correctly.
 - One objective was create a compose in docker to intergate database and server, but this is failing. It could be that a command is wrong, because when i compose up the server don't respond anything. I will solve it in the future.
+
+***
+
+**Explanation to use demo**
+1. Clone this repository
+2. Install pluggin of Rest Client in: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+3. Send requests from requests folder. 
+- Open requests folder
+<img alt="requests folder" src="multimedia/requests-folder-employees-crud.jpg">
+- Example of a post of an employee
+<img alt="example of a post request" src="multimedia/request-to-post-for-production-employees-crud.jpg">
+__Note:__ click on POST where it says Send Request and wait for a response.
 
 ***
 
@@ -11,7 +23,6 @@ __Disclaimer:__
 3. Run server
 4. Send requests from requests folder
 
-***
 # CRUD service for employees (CRUD = Create Read Update Delete)
 
 ## Create and start a PostgreSQL container:
