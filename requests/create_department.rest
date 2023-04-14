@@ -2,7 +2,7 @@ POST http://localhost:1234/api/departamentos/crear/  HTTP/1.1
 content-type: application/json
 
 {
-    "codigo": 5130,
-    "nombre": "gestion humana",
-    "presupuesto": 8000000
+    "codigo": 5131,
+    "nombre": "mantenimiento",
+    "presupuesto": 9000000
 }

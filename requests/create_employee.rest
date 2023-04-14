@@ -2,10 +2,10 @@ POST http://localhost:1234/api/empleados/crear/  HTTP/1.1
 content-type: application/json
 
 {
-    "codigo": 2145,
-    "nif": 450,
-    "nombre": "andrew",
-    "apellido1": "tas",
+    "codigo": 2146,
+    "nif": 460,
+    "nombre": "jhonas",
+    "apellido1": "blue",
     "apellido2": "ja",
-    "codigo_departamento": 5130
+    "codigo_departamento": 5131
 }
