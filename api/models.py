@@ -3,12 +3,10 @@ from django.db import models
 class Departamento(models.Model):
     codigo = models.SmallIntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
-    presupuesto = models.BigIntegerField()
-
+    presupuesto = models.BigIntegerField(default=0)
+    
     def __str__(self):
-        return f"{self.codigo}"
-    
-    
+        return f"{self.codigo}"  
     
 class Empleado(models.Model):
     codigo = models.SmallIntegerField(primary_key=True)
@@ -16,7 +14,7 @@ class Empleado(models.Model):
     nombre = models.CharField(max_length=100)
     apellido1 = models.CharField(max_length=100)
     apellido2 = models.CharField(max_length=100, default="")
-    codigo_departamento = models.ForeignKey(Departamento, null=True, on_delete=models.CASCADE)
+    codigo_departamento = models.ForeignKey(Departamento, null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.codigo}"

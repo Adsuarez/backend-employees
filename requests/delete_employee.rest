@@ -1,0 +1,6 @@
+#For development
+DELETE http://localhost:1234/api/empleados/eliminar/2145/
+
+###
+#For production
+DELETE https://employees-crud.onrender.com/api/empleados/eliminar/2110/

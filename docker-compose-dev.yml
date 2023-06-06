@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    env_file: .env
+
+  django-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "1234:1234"
+    env_file: .env
+    depends_on:
+      - db

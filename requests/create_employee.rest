@@ -1,11 +1,26 @@
-POST http://localhost:1234/api/empleado/  HTTP/1.1
+#For development
+POST http://localhost:1234/api/empleados/crear/  HTTP/1.1
 content-type: application/json
 
 {
-    "codigo": 2132,
-    "nif": 320,
-    "nombre": "fulainto",
-    "apellido1": "de tal",
-    "apellido2": "cosita",
-    "codigo_departamento": 5123
+    "codigo": 2146,
+    "nif": 460,
+    "nombre": "jhonas",
+    "apellido1": "blue",
+    "apellido2": "ja",
+    "codigo_departamento": 5131
+}
+
+###
+#For production
+POST https://employees-crud.onrender.com/api/empleados/crear/  HTTP/1.1
+content-type: application/json
+
+{
+    "codigo": 2110,
+    "nif": 110,
+    "nombre": "andrew",
+    "apellido1": "gracias",
+    "apellido2": "a dios",
+    "codigo_departamento": 5110
 }

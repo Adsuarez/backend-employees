@@ -1,0 +1,6 @@
+#For development
+GET http://localhost:1234/api/empleados/2144/
+
+###
+#For production
+GET https://employees-crud.onrender.com/api/empleados/2111/
