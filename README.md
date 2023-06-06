@@ -1,9 +1,6 @@
----
-__Disclaimer:__ 
-- This project was created to practice CRUD service for employees of a company, this works correctly.
-- One objective was create a compose in docker to intergate database and server, but this is failing. It could be that a command is wrong, because when i compose up the server don't respond anything. I will solve it in the future.
+# API REST to manage Employees in a company
+
 - Visit demo here: https://employees-crud.onrender.com/api/empleados/
-***
 
 **Explanation to use demo**
 1. Clone this repository
@@ -13,7 +10,7 @@ __Disclaimer:__
 <img alt="requests folder" src="multimedia/requests-folder-employees-crud.jpg">
 - Example of a post of an employee
 <img alt="example of a post request" src="multimedia/request-to-post-for-production-employees-crud.jpg">
-__Note:__ click on POST where it says Send Request and wait for a response.
+Note: click on POST where it says Send Request and wait for a response.
 
 ***
 
